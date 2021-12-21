@@ -5,7 +5,8 @@
   "main": "mongodb.js",
   "scripts": {
     "start": "node src/index.js",
-    "dev": "env-cmd -f ./config/dev.env nodemon src/index.js"
+    "dev": "env-cmd -f ./config/dev.env nodemon src/index.js",
+    "test": "env-cmd -f ./config/test.env jest --watch --runInBand"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +24,14 @@
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",
-    "nodemon": "^2.0.13"
+    "jest": "^27.4.5",
+    "nodemon": "^2.0.13",
+    "supertest": "^6.1.6"
+  },
+  "jest": {
+    "watchPathIgnorePatterns": [
+      "node_modules"
+    ],
+    "testEnvironment": "node"
   }
 }
